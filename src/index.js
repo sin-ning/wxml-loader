@@ -104,7 +104,8 @@ export default function (content) {
 		if (typeof transformUrl === 'function') {
 			url = transformUrl(url, resource);
 		}
-		content = replaceAt(content, startIndex, endIndex, url);
+		// 去掉 replaceAt 解决 WXS 引用问题
+		// content = replaceAt(content, startIndex, endIndex, url);
 	};
 
 	const parser = sax.parser(false, { lowercase: true });
